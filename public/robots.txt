@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://beyondbsolutions.com/sitemap.xml
