@@ -7,10 +7,16 @@ Next.js 15 (App Router, React 19, TypeScript), exported as plain static files an
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000
+npm run preview    # builds and serves the real site, the way Cloudflare will (use this to judge speed and animations)
+npm run dev        # editing mode with hot reload, http://localhost:3000
 npm run build      # writes the static site to ./out
-npm run start      # serves ./out locally
+npm run start      # serves an existing ./out
 ```
+
+**Judge speed with `npm run preview`, not `npm run dev`.** The dev server compiles on demand and ships
+about 8 MB of unminified JavaScript, so the first load takes 10 to 15 seconds and the animations start
+several seconds late. The built site ships about 0.4 MB and starts its animations in about 1.3 seconds
+(measured with the CPU slowed 4x).
 
 Node 20 or newer (`.nvmrc` says 22).
 
